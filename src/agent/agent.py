@@ -50,8 +50,11 @@ class StarkAgent:
         
     def _generate_agent_id(self) -> str:
         """Generate unique agent identifier based on system info"""
+        import uuid
         hostname = socket.gethostname()
-        mac = ':'.join(['{:02x}'.format((int(time.time()) >> i) & 0xff) for i in range(0, 48, 8)])
+        # Get actual MAC address
+        mac_int = uuid.getnode()
+        mac = ':'.join(['{:02x}'.format((mac_int >> i) & 0xff) for i in range(0, 48, 8)])
         return f"{hostname}_{mac}"
     
     def get_system_info(self) -> Dict[str, Any]:
@@ -84,7 +87,8 @@ class StarkAgent:
                     'free': usage.free,
                     'percent': usage.percent
                 }
-            except:
+            except (PermissionError, OSError):
+                # Skip partitions we can't access
                 pass
         
         # Network interfaces
