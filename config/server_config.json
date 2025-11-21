@@ -1,0 +1,32 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8443,
+    "max_connections": 100,
+    "connection_timeout": 300,
+    "enable_tls": true,
+    "tls_cert": "config/server_cert.pem",
+    "tls_key": "config/server_key.pem"
+  },
+  "security": {
+    "require_authentication": true,
+    "token_expiry_days": 90,
+    "max_auth_attempts": 3,
+    "enable_ip_whitelist": false,
+    "allowed_ips": []
+  },
+  "logging": {
+    "level": "INFO",
+    "log_dir": "logs",
+    "log_file": "server.log",
+    "max_file_size_mb": 100,
+    "backup_count": 10,
+    "enable_audit_log": true,
+    "audit_log_file": "audit.log"
+  },
+  "database": {
+    "enabled": false,
+    "type": "sqlite",
+    "path": "data/stark_server.db"
+  }
+}

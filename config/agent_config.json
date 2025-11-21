@@ -1,0 +1,33 @@
+{
+  "agent": {
+    "server_host": "127.0.0.1",
+    "server_port": 8443,
+    "reconnect_interval": 30,
+    "heartbeat_interval": 60,
+    "enable_tls": true,
+    "verify_server_cert": true
+  },
+  "security": {
+    "auth_token": "",
+    "encryption_enabled": true
+  },
+  "monitoring": {
+    "collect_system_info": true,
+    "info_collection_interval": 300,
+    "monitor_processes": true,
+    "monitor_network": true,
+    "monitor_disk": true
+  },
+  "logging": {
+    "level": "INFO",
+    "log_dir": "logs",
+    "log_file": "agent.log",
+    "max_file_size_mb": 50,
+    "backup_count": 5
+  },
+  "execution": {
+    "command_timeout": 60,
+    "max_command_length": 10000,
+    "allowed_shells": ["cmd", "powershell"]
+  }
+}
