@@ -1,0 +1,35 @@
+# Stark Secure Agent - Python Dependencies
+
+# Core dependencies for server and agent
+cryptography>=41.0.0  # Encryption and secure communication
+pycryptodome>=3.19.0  # Additional cryptographic functions
+requests>=2.31.0      # HTTP client library
+psutil>=5.9.0         # System and process monitoring
+
+# Server-specific dependencies
+flask>=3.0.0          # Web framework for admin interface
+flask-cors>=4.0.0     # CORS support for web interface
+sqlalchemy>=2.0.0     # Database ORM for logging and management
+python-dotenv>=1.0.0  # Environment configuration
+
+# Security and authentication
+pyjwt>=2.8.0          # JSON Web Tokens for authentication
+bcrypt>=4.1.0         # Password hashing
+
+# Logging and monitoring
+colorlog>=6.8.0       # Colored logging output
+python-json-logger>=2.0.0  # JSON formatted logs
+
+# Network and communication
+websockets>=12.0      # WebSocket support for real-time communication
+aiohttp>=3.9.0        # Async HTTP client/server
+
+# Windows-specific (for agent on Windows systems)
+pywin32>=306; sys_platform == 'win32'  # Windows API access
+wmi>=1.5.1; sys_platform == 'win32'    # Windows Management Instrumentation
+
+# Development and testing
+pytest>=7.4.0         # Testing framework
+pytest-asyncio>=0.23.0  # Async testing support
+black>=23.12.0        # Code formatting
+flake8>=7.0.0         # Code linting
